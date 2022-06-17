@@ -2,6 +2,7 @@
   "name": "dom-utils",
   "version": "1.0.0",
   "description": "Helper functions for working with the DOM",
+  "private": true,
   "main": "dom-utils.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
