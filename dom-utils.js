@@ -8,11 +8,12 @@
 //     properties {
 //         key : value,
 //         key2: value2
-//     }
+//     },
 //     attributes = {
 //         key : value,
 //         key2 : value2
-//     }
+//     },
+//     children : [ HtmlElements ],
 // }
 //
 // returns the newly created element
@@ -24,6 +25,7 @@ function createHtmlElement(elementObject){
 
     const newElement = document.createElement(elementObject.tag);
     const classes = elementObject.classes || [];
+    const children = elementObject.children || [];
     const properties = elementObject.properties || {};
     const attributes = elementObject.attributes || {};
 
@@ -31,15 +33,16 @@ function createHtmlElement(elementObject){
         classes.forEach( cls => newElement.classList.add(cls));
     }
 
-
-    for (property in properties){
+    for (let property in properties){
         newElement[property] = properties[property];
     }
 
-    for (attribute in attributes){
+    for (let attribute in attributes){
         newElement.setAttribute(attribute, attributes[attribute]);
     }
 
+    appendChildren(newElement, children); 
+    
     return newElement;
 }
 
@@ -53,4 +56,4 @@ function appendChildren(parent, children){
 };
 
 
-exports { createHtmlElement, appendChildren };
+export {createHtmlElement, appendChildren };
