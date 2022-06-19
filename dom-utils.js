@@ -17,7 +17,7 @@
 // }
 //
 // returns the newly created element
-console.log("dom-utils imported");
+
 function createHtmlElement(elementObject){
     //Must at least have a tag.
     if (typeof elementObject.tag !== 'string'){
