@@ -56,5 +56,12 @@ function appendChildren(parent, children){
     return parent;
 };
 
+function getElementFromTemplateFile(templateSrc) {
+    const template = document.createElement('template');
+    template.innerHTML = templateSrc;
+  
+    return template.content.firstElementChild.cloneNode(true);
+  }
+  
 
-export {createHtmlElement, appendChildren };
+export {createHtmlElement, appendChildren, getElementFromTemplateFile };
